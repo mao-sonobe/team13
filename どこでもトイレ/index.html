@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>どこでもトイレ - 近くのトイレをすぐに探す</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>どこでもトイレ</h1>
+        <div class="search-container">
+            <input type="text" id="location-search" placeholder="場所を検索...">
+            <button id="filter-button">フィルター</button>
+        </div>
+    </header>
+    
+    <main>
+        <div id="map-container"></div>
+        
+        <div id="toilet-list">
+            <h2>近くのトイレ</h2>
+            <div class="toilet-items">
+                <!-- トイレリストがJSで動的に生成される -->
+            </div>
+        </div>
+        
+        <button id="add-toilet" class="floating-button">トイレを登録</button>
+    </main>
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <script src="js/map.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トイレ詳細 - どこでもトイレ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 id="toilet-title">トイレ詳細</h1>
+    </header>
+    
+    <main class="detail-container">
+        <div class="toilet-info">
+            <div id="toilet-address" class="address"></div>
+            <div id="toilet-distance" class="distance"></div>
+            
+            <div class="facility-icons">
+                <!-- 設備アイコンがJSで動的に生成される -->
+            </div>
+            
+            <div class="photo-gallery">
+                <!-- 写真がJSで動的に生成される -->
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button id="navigate-button">ここへ行く</button>
+            <button id="not-exist-button" class="report-button">トイレがなかった</button>
+            <button id="missing-facility-button" class="report-button">設備が不足/破損</button>
+        </div>
+        
+        <!-- フェーズ2で実装 -->
+        <div class="comments-section hidden">
+            <h3>ユーザーコメント</h3>
+            <div id="comments-list">
+                <!-- コメントがJSで動的に生成される -->
+            </div>
+            <form id="comment-form">
+                <textarea placeholder="コメントを投稿..."></textarea>
+                <button type="submit">投稿</button>
+            </form>
+        </div>
+    </main>
+    
+    <script src="js/toilet-detail.js"></script>
+</body>
+</html>
