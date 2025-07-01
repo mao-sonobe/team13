@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 'handdryer', name: 'ハンドドライヤー', icon: '💨' }
         ],
         photos: [
-            'img/sample-toilet-1.jpg',
+            'img/sample-toilet-1.jpeg',
             'img/sample-toilet-2.jpg'
         ]
     };

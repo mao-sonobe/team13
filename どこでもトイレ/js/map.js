@@ -2,6 +2,7 @@
 let map;
 let currentLocationMarker;
 let toiletMarkers = [];
+let userPosition = null;
 
 // マップの初期化
 function initMap() {
@@ -67,8 +68,8 @@ function searchNearbyToilets(location) {
         {
             id: 1,
             name: '東京駅八重洲口トイレ',
-            lat: location.lat + 0.002,
-            lng: location.lng + 0.001,
+            lat: 35.6814,
+            lng: 139.7672,
             distance: '210m',
             time: '約3分',
             facilities: ['baby', 'multipurpose', 'handdryer']
@@ -76,8 +77,8 @@ function searchNearbyToilets(location) {
         {
             id: 2,
             name: '丸の内ビルディングトイレ',
-            lat: location.lat - 0.001,
-            lng: location.lng + 0.003,
+            lat: 35.6811,
+            lng: 139.7664,
             distance: '350m',
             time: '約5分',
             facilities: ['baby', 'ostomate']
@@ -85,14 +86,25 @@ function searchNearbyToilets(location) {
         {
             id: 3,
             name: '行幸通り公衆トイレ',
-            lat: location.lat + 0.0015,
-            lng: location.lng - 0.002,
+            lat: 35.6827,
+            lng: 139.7669,
             distance: '420m',
             time: '約6分',
             facilities: ['multipurpose']
         }
     ];
-    
+
+    // 現在地からの距離を計算して追加
+    const userLatLng = L.latLng(location.lat, location.lng);
+    dummyToilets.forEach(toilet => {
+        const toiletLatLng = L.latLng(toilet.lat, toilet.lng);
+        const distance = userLatLng.distanceTo(toiletLatLng);  // 単位: メートル
+
+        toilet.distance = distance >= 1000
+            ? `${(distance / 1000).toFixed(2)}km`
+            : `${Math.round(distance)}m`;
+    });
+
     displayToilets(dummyToilets);
 }
 
@@ -105,7 +117,7 @@ function displayToilets(toilets) {
     toilets.forEach(toilet => {
         // カスタムアイコンの作成
         const toiletIcon = L.icon({
-            iconUrl: 'img/toilet-pin.png',  // トイレアイコン画像へのパス
+            iconUrl: 'img/toilet-pin.jpg',  // トイレアイコン画像へのパス
             iconSize: [32, 32],  // アイコンサイズ
             iconAnchor: [16, 32], // アイコンのアンカーポイント
             popupAnchor: [0, -32] // ポップアップのアンカーポイント
