@@ -1,7 +1,7 @@
 <html lang="ja"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>トイレファインダー</title>
+    <title>トイレビュ！！</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <style>
         * {
@@ -612,6 +612,7 @@
             // 画面に映っている範囲を bbox 文字列（南,西,北,東）に
             const b = map.getBounds();
             const bbox = `${b.getSouth()},${b.getWest()},${b.getNorth()},${b.getEast()}`;
+            
 
             // OverpassQL
             const query = `
@@ -624,6 +625,7 @@
             out center;`;
 
             const url  = 'https://overpass-api.de/api/interpreter?data=' + encodeURIComponent(query);
+            console.log(url);
             const res  = await fetch(url);
             const data = await res.json();
 
@@ -632,16 +634,17 @@
                 const lat  = el.lat ?? el.center?.lat;
                 const lng  = el.lon ?? el.center?.lon;
                 const tags = el.tags ?? {};
+                console.log(tags);
 
                 return {
                     id:   el.id,
                     name: tags.name ?? '公共トイレ',
                     lat, lng,
-                    address: tags['addr:full'] || tags['addr:street'] || '住所不明',
+                    address: tags['full'] || tags['street'] || '住所不明',
                     facilities: [
                         ...(tags.changing_table        === 'yes' ? ['ベビーベッド']      : []),
-                        ...(tags['toilets:wheelchair'] === 'yes' ? ['多目的トイレ']     : []),
-                        ...(tags['toilets:ostomy']     === 'yes' ? ['オストメイト']     : []),
+                        ...(tags['wheelchair'] === 'yes' ? ['多目的トイレ']     : []),
+                        ...(tags['ostomy']     === 'yes' ? ['オストメイト']     : []),
                         ...(tags.hand_dryer            === 'yes' ? ['ハンドドライヤー'] : [])
                     ],
                     rating:      3.0,   // OSM には評価が無いのでデフォルト
@@ -1156,7 +1159,7 @@
                 e.preventDefault();
                 
                 if (!tempMarker) {
-                    alert('地図上でトイレの位置をクリックしてください。');
+                    alert('登録完了！！！！');
                     return;
                 }
                 
