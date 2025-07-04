@@ -607,6 +607,51 @@
         let tempMarker = null;
         let selectedRating = 0;
 
+        // ★ add: 地図の bbox から amenity=toilets を取ってくる
+        async function pullToiletsFromOSM() {
+            // 画面に映っている範囲を bbox 文字列（南,西,北,東）に
+            const b = map.getBounds();
+            const bbox = `${b.getSouth()},${b.getWest()},${b.getNorth()},${b.getEast()}`;
+
+            // OverpassQL
+            const query = `
+            [out:json][timeout:25];
+            (
+                node["amenity"="toilets"](${bbox});
+                way["amenity"="toilets"](${bbox});
+                relation["amenity"="toilets"](${bbox});
+            );
+            out center;`;
+
+            const url  = 'https://overpass-api.de/api/interpreter?data=' + encodeURIComponent(query);
+            const res  = await fetch(url);
+            const data = await res.json();
+
+            // OSM → 既存フォーマットに変換
+            return data.elements.map((el) => {
+                const lat  = el.lat ?? el.center?.lat;
+                const lng  = el.lon ?? el.center?.lon;
+                const tags = el.tags ?? {};
+
+                return {
+                    id:   el.id,
+                    name: tags.name ?? '公共トイレ',
+                    lat, lng,
+                    address: tags['addr:full'] || tags['addr:street'] || '住所不明',
+                    facilities: [
+                        ...(tags.changing_table        === 'yes' ? ['ベビーベッド']      : []),
+                        ...(tags['toilets:wheelchair'] === 'yes' ? ['多目的トイレ']     : []),
+                        ...(tags['toilets:ostomy']     === 'yes' ? ['オストメイト']     : []),
+                        ...(tags.hand_dryer            === 'yes' ? ['ハンドドライヤー'] : [])
+                    ],
+                    rating:      3.0,   // OSM には評価が無いのでデフォルト
+                    cleanliness: 3,
+                    comments:    []
+                };
+            });
+        }
+
+
         // サンプルデータ
         const sampleToilets = [
             {
@@ -666,8 +711,10 @@
             }
         ];
 
+
+        
         // 初期化
-        function initMap() {
+        async function initMap() {
             // 地図の初期化（東京駅を中心に）
             map = L.map('map').setView([35.6812, 139.7671], 15);
 
@@ -675,6 +722,19 @@
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap contributors'
             }).addTo(map);
+
+
+            // ★ 最初の読み込み
+            toilets = await pullToiletsFromOSM();
+            addToiletMarkers();
+            updateNearbyToilets();
+
+                // ★ 地図移動ごとに再取得（連続呼び出し防止なら debounce する）
+            map.on('moveend', async () => {
+                toilets = await pullToiletsFromOSM();
+                addToiletMarkers();
+                updateNearbyToilets();
+            });
 
             // サンプルデータをローカルストレージから読み込み、なければサンプルデータを使用
             const savedToilets = localStorage.getItem('toilets');
