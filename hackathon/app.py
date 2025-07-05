@@ -73,7 +73,6 @@ def add_toilet():
     # 必須項目のチェック
     if "name" not in data or "lat" not in data or "lng" not in data:
         return jsonify({"error": "Missing required fields: name, lat, lng"}), 400
-
     new_toilet = Toilet(
         name=data["name"],
         lat=data["lat"],
