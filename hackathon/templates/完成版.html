@@ -523,6 +523,96 @@
         let tempMarker = null; // 新規登録用の一時マーカー
         let selectedRating = 0; // 新規登録時の評価
 
+        function getAddressFromTags(tags, lat, lng) {
+            console.log('住所抽出開始:', tags);
+            
+            // OSMタグから住所情報を構築
+            const addressParts = [];
+
+            // 住所関連のタグを確認
+            if (tags['addr:full']) {
+                console.log('addr:full found:', tags['addr:full']);
+                return tags['addr:full'];
+            }
+
+            // 実際のOSMタグ構造に合わせて住所を組み立て
+            if (tags['addr:province']) {
+                console.log('province:', tags['addr:province']);
+                addressParts.push(tags['addr:province']);
+            }
+            if (tags['addr:city']) {
+                console.log('city:', tags['addr:city']);
+                addressParts.push(tags['addr:city']);
+            }
+            if (tags['addr:quarter']) {
+                console.log('quarter:', tags['addr:quarter']);
+                addressParts.push(tags['addr:quarter']);
+            }
+            if (tags['addr:neighbourhood']) {
+                console.log('neighbourhood:', tags['addr:neighbourhood']);
+                addressParts.push(tags['addr:neighbourhood']);
+            }
+            if (tags['addr:block_number']) {
+                console.log('block_number:', tags['addr:block_number']);
+                addressParts.push(tags['addr:block_number']);
+            }
+
+            // 道路名と番地
+            if (tags['addr:housenumber'] && tags['addr:street']) {
+                console.log('street + housenumber:', tags['addr:street'] + tags['addr:housenumber']);
+                addressParts.push(tags['addr:street'] + tags['addr:housenumber']);
+            } else if (tags['addr:street']) {
+                console.log('street only:', tags['addr:street']);
+                addressParts.push(tags['addr:street']);
+            } else if (tags['addr:housenumber']) {
+                console.log('housenumber only:', tags['addr:housenumber']);
+                addressParts.push(tags['addr:housenumber']);
+            }
+
+            console.log('addressParts after main construction:', addressParts);
+
+            if (addressParts.length > 0) {
+                const result = addressParts.join('');
+                console.log('最終住所:', result);
+                return result;
+            }
+
+            // その他の住所タグ（フォールバック）
+            console.log('フォールバック処理開始');
+            if (tags['addr:prefecture']) addressParts.push(tags['addr:prefecture']);
+            if (tags['addr:town']) addressParts.push(tags['addr:town']);
+            if (tags['addr:village']) addressParts.push(tags['addr:village']);
+            if (tags['addr:suburb']) addressParts.push(tags['addr:suburb']);
+
+            if (addressParts.length > 0) {
+                const result = addressParts.join('');
+                console.log('フォールバック住所:', result);
+                return result;
+            }
+
+            // 名前がある場合はそれを使用
+            if (tags.name) {
+                console.log('名前を使用:', tags.name);
+                return tags.name + '周辺';
+            }
+
+            // 緯度経度から簡易的な地域名を推定
+            console.log('地域推定処理');
+            if (lat >= 35.6 && lat <= 35.8 && lng >= 139.6 && lng <= 139.9) {
+                return '東京都内';
+            } else if (lat >= 35.3 && lat <= 35.7 && lng >= 139.4 && lng <= 139.8) {
+                return '東京都周辺';
+            } else if (lat >= 34.5 && lat <= 35.0 && lng >= 135.3 && lng <= 135.8) {
+                return '大阪府内';
+            } else if (lat >= 35.0 && lat <= 35.3 && lng >= 135.5 && lng <= 135.9) {
+                return '京都府内';
+            }
+
+            // 最終フォールバック
+            console.log('最終フォールバック');
+            return `緯度${lat.toFixed(4)}, 経度${lng.toFixed(4)}`;
+        }
+
         // --- サンプルデータ（サーバー接続失敗時用） ---
         const sampleToilets = [
             {id: 1, name: "東京駅丸の内南口トイレ", lat: 35.6812, lng: 139.7671, address: "東京都千代田区丸の内1-9-1", facilities: ["ベビーベッド", "多目的トイレ", "ハンドドライヤー", "車椅子対応"], rating: 4.2, cleanliness: 4, comments: ["清潔で使いやすい", "混雑している時間帯がある"]},
@@ -575,34 +665,52 @@
 
         // OpenStreetMapから地図表示範囲のトイレ情報を取得
         async function pullToiletsFromOSM() {
+            // 画面に映っている範囲を bbox 文字列（南,西,北,東）に
             const b = map.getBounds();
             const bbox = `${b.getSouth()},${b.getWest()},${b.getNorth()},${b.getEast()}`;
-            const query = `[out:json][timeout:25];(node["amenity"="toilets"](${bbox});way["amenity"="toilets"](${bbox});relation["amenity"="toilets"](${bbox}););out center;`;
-            const url  = 'https://overpass-api.de/api/interpreter?data=' + encodeURIComponent(query);
-            
-            try {
-                const res = await fetch(url);
-                const data = await res.json();
-                return data.elements.map(el => ({
+
+
+            // OverpassQL
+            const query = `
+            [out:json][timeout:25];
+            (
+                node["amenity"="toilets"](${bbox});
+                way["amenity"="toilets"](${bbox});
+                relation["amenity"="toilets"](${bbox});
+            );
+            out center;`;
+
+            const url = 'https://overpass-api.de/api/interpreter?data=' + encodeURIComponent(query);
+            console.log(url);
+            const res = await fetch(url);
+            const data = await res.json();
+
+            // OSM → 既存フォーマットに変換（タグから住所を抽出）
+            return data.elements.map((el) => {
+                const lat = el.lat ?? el.center?.lat;
+                const lng = el.lon ?? el.center?.lon;
+                const tags = el.tags ?? {};
+                console.log(tags);
+
+                // OSMタグから住所を抽出
+                const address = getAddressFromTags(tags, lat, lng);
+
+                return {
                     id: el.id,
-                    name: el.tags?.name ?? '公共トイレ',
-                    lat: el.lat ?? el.center?.lat,
-                    lng: el.lon ?? el.center?.lon,
-                    address: el.tags?.['addr:full'] || el.tags?.['addr:street'] || '住所不明',
+                    name: tags.name ?? '公共トイレ',
+                    lat, lng,
+                    address: address,
                     facilities: [
-                        ...(el.tags?.changing_table === 'yes' ? ['ベビーベッド'] : []),
-                        ...(el.tags?.wheelchair === 'yes' ? ['多目的トイレ'] : []),
-                        ...(el.tags?.ostomy === 'yes' ? ['オストメイト'] : []),
-                        ...(el.tags?.hand_dryer === 'yes' ? ['ハンドドライヤー'] : [])
+                        ...(tags.changing_table === 'yes' ? ['ベビーベッド'] : []),
+                        ...(tags['wheelchair'] === 'yes' ? ['多目的トイレ'] : []),
+                        ...(tags['ostomy'] === 'yes' ? ['オストメイト'] : []),
+                        ...(tags.hand_dryer === 'yes' ? ['ハンドドライヤー'] : [])
                     ],
-                    rating: 3.0,
+                    rating: 3.0,   // OSM には評価が無いのでデフォルト
                     cleanliness: 3,
                     comments: []
-                }));
-            } catch (error) {
-                console.error("OSMからのデータ取得に失敗:", error);
-                return [];
-            }
+                };
+            });
         }
 
         // --- 地図とマーカーの操作 ---
@@ -820,7 +928,9 @@
                     name: document.getElementById('toiletName').value,
                     lat: parseFloat(lat),
                     lng: parseFloat(lng),
-                    address: document.getElementById('toiletAddress').value || '住所不明',
+                    address: getAddressFromTags({
+                        'addr:full': document.getElementById('toiletAddress').value
+                    }, parseFloat(lat), parseFloat(lng)),
                     facilities: facilities,
                     rating: selectedRating || 3.0,
                     cleanliness: selectedRating || 3,
