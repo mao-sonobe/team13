@@ -268,6 +268,15 @@
             outline: none;
             border-color: #667eea;
         }
+        
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
         .checkbox-group {
             display: grid;
@@ -398,7 +407,7 @@
         </div>
 
         <div class="map-container">
-            <div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative; outline-style: none;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-277px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(45px, 26px, 0px) scale(0.5);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(323px, 110px, 0px) scale(1);"><img alt="" src="https://c.tile.openstreetmap.org/12/3637/1612.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(60px, -32px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/12/3638/1612.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(316px, -32px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/12/3637/1613.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(60px, 224px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/12/3638/1613.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(316px, 224px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/12/3636/1612.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-196px, -32px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/12/3639/1612.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(572px, -32px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/12/3636/1613.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-196px, 224px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/12/3639/1613.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(572px, 224px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/12/3638/1611.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(316px, -288px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/12/3638/1614.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(316px, 480px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/12/3637/1611.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(60px, -288px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/12/3639/1611.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(572px, -288px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/12/3637/1614.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(60px, 480px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/12/3639/1614.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(572px, 480px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/12/3640/1612.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(828px, -32px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/12/3640/1613.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(828px, 224px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/12/3636/1611.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-196px, -288px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/12/3640/1611.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(828px, -288px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/12/3636/1614.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-196px, 480px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/12/3640/1614.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(828px, 480px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/12/3635/1612.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-452px, -32px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/12/3641/1612.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1084px, -32px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/12/3635/1613.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-452px, 224px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/12/3641/1613.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1084px, 224px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/12/3635/1611.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-452px, -288px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/12/3641/1611.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1084px, -288px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/12/3635/1614.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-452px, 480px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/12/3641/1614.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1084px, 480px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-shadow-pane"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(700px, 312px, 0px);"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(664px, 303px, 0px);"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(678px, 337px, 0px);"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(691px, 346px, 0px);"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(689px, 334px, 0px);"></div><div class="leaflet-pane leaflet-marker-pane"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(700px, 312px, 0px); z-index: 312;"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(664px, 303px, 0px); z-index: 303;"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(678px, 337px, 0px); z-index: 337;"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(691px, 346px, 0px); z-index: 346;"><img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(689px, 334px, 0px); z-index: 334;"><div class="leaflet-marker-icon current-location-marker leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -10px; margin-top: -10px; width: 20px; height: 20px; transform: translate3d(863px, 224px, 0px); z-index: 224;"></div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(931424px, 412898px, 0px) scale(2048);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false"><span aria-hidden="true">−</span></a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a> <span aria-hidden="true">|</span> © OpenStreetMap contributors</div></div></div></div>
+            <div id="map"></div>
         </div>
 
         <div class="bottom-panel" id="bottomPanel">
@@ -428,134 +437,43 @@
                 </div>
             </div>
             <div class="toilet-list" id="toiletList">
-                <div class="toilet-item" onclick="showToiletDetail(1)">
-                    <div class="toilet-name">東京駅丸の内南口トイレ</div>
-                    <div class="toilet-info">
-                        <div class="distance-time">
-                            5732m・徒歩72分
-                        </div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span>4.2</span>
-                        </div>
-                    </div>
-                    <div class="facilities">
-                        <span class="facility-tag">ベビーベッド</span><span class="facility-tag">多目的トイレ</span><span class="facility-tag">ハンドドライヤー</span><span class="facility-tag">車椅子対応</span>
-                    </div>
                 </div>
-            
-                <div class="toilet-item" onclick="showToiletDetail(5)">
-                    <div class="toilet-name">有楽町駅前トイレ</div>
-                    <div class="toilet-info">
-                        <div class="distance-time">
-                            6379m・徒歩80分
-                        </div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span>3.5</span>
-                        </div>
-                    </div>
-                    <div class="facilities">
-                        <span class="facility-tag">多目的トイレ</span><span class="facility-tag">ハンドドライヤー</span>
-                    </div>
-                </div>
-            
-                <div class="toilet-item" onclick="showToiletDetail(4)">
-                    <div class="toilet-name">銀座三越トイレ</div>
-                    <div class="toilet-info">
-                        <div class="distance-time">
-                            6524m・徒歩82分
-                        </div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span>4.5</span>
-                        </div>
-                    </div>
-                    <div class="facilities">
-                        <span class="facility-tag">ベビーベッド</span><span class="facility-tag">多目的トイレ</span><span class="facility-tag">オストメイト</span><span class="facility-tag">ハンドドライヤー</span><span class="facility-tag">ウォシュレット</span>
-                    </div>
-                </div>
-            
-                <div class="toilet-item" onclick="showToiletDetail(2)">
-                    <div class="toilet-name">皇居外苑公衆トイレ</div>
-                    <div class="toilet-info">
-                        <div class="distance-time">
-                            6618m・徒歩83分
-                        </div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span>3.8</span>
-                        </div>
-                    </div>
-                    <div class="facilities">
-                        <span class="facility-tag">多目的トイレ</span><span class="facility-tag">車椅子対応</span>
-                    </div>
-                </div>
-            
-                <div class="toilet-item" onclick="showToiletDetail(3)">
-                    <div class="toilet-name">日比谷公園トイレ</div>
-                    <div class="toilet-info">
-                        <div class="distance-time">
-                            6717m・徒歩84分
-                        </div>
-                        <div class="rating">
-                            <span class="star">★</span>
-                            <span>4.0</span>
-                        </div>
-                    </div>
-                    <div class="facilities">
-                        <span class="facility-tag">ベビーベッド</span><span class="facility-tag">ハンドドライヤー</span><span class="facility-tag">ウォシュレット</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
-    <!-- 新規登録モーダル -->
     <div class="modal" id="registerModal">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title">新しいトイレを登録</div>
                 <button class="close-btn" onclick="closeRegisterModal()">×</button>
             </div>
-            <form id="registerForm" method="POST" action="http://127.0.0.1:5000/api/toilets">
+            <form id="registerForm">
                 <div class="form-group">
                     <label class="form-label">トイレ名称</label>
                     <input type="text" class="form-input" id="toiletName" placeholder="例：○○駅構内トイレ" required="">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">住所</label>
-                    <input type="text" class="form-input" id="toiletAddress" placeholder="住所を入力してください">
+                    <label class="form-label">緯度</label>
+                    <input type="number" step="any" class="form-input" id="toiletLat" placeholder="地図をクリックするか、緯度を入力" required="">
                 </div>
-                <input type="hidden" id="toiletLat" name="lat" value="">
-                <input type="hidden" id="toiletLng" name="lng" value="">
+                <div class="form-group">
+                    <label class="form-label">経度</label>
+                    <input type="number" step="any" class="form-input" id="toiletLng" placeholder="地図をクリックするか、経度を入力" required="">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">住所（任意）</label>
+                    <input type="text" class="form-input" id="toiletAddress" placeholder="住所がわかれば入力してください">
+                </div>
+                
                 <div class="form-group">
                     <label class="form-label">設備</label>
                     <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="regBabyBed">
-                            <label for="regBabyBed">ベビーベッド</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="regMultipurpose">
-                            <label for="regMultipurpose">多目的トイレ</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="regOstomy">
-                            <label for="regOstomy">オストメイト</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="regHandDryer">
-                            <label for="regHandDryer">ハンドドライヤー</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="regWheelchair">
-                            <label for="regWheelchair">車椅子対応</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="regBidet">
-                            <label for="regBidet">ウォシュレット</label>
-                        </div>
+                        <div class="checkbox-item"><input type="checkbox" id="regBabyBed"><label for="regBabyBed">ベビーベッド</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="regMultipurpose"><label for="regMultipurpose">多目的トイレ</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="regOstomy"><label for="regOstomy">オストメイト</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="regHandDryer"><label for="regHandDryer">ハンドドライヤー</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="regWheelchair"><label for="regWheelchair">車椅子対応</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="regBidet"><label for="regBidet">ウォシュレット</label></div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -579,20 +497,16 @@
         </div>
     </div>
 
-    <!-- トイレ詳細モーダル -->
     <div class="modal" id="detailModal">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title" id="detailTitle">トイレ詳細</div>
                 <button class="close-btn" onclick="closeDetailModal()">×</button>
             </div>
-            <div id="detailContent">
-                <!-- トイレ詳細がここに表示されます -->
-            </div>
+            <div id="detailContent"></div>
         </div>
     </div>
 
-    <!-- ローディング -->
     <div class="loading" id="loading">
         <div class="spinner"></div>
         <div>位置情報を取得中...</div>
@@ -600,300 +514,107 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // グローバル変数
+        // --- グローバル変数 ---
         let map;
         let currentLocationMarker;
         let currentPosition = null;
         let toiletMarkers = [];
-        let toilets = [];
-        let tempMarker = null;
-        let selectedRating = 0;
+        let toilets = []; // サーバーとOSMからのトイレ情報を保持
+        let tempMarker = null; // 新規登録用の一時マーカー
+        let selectedRating = 0; // 新規登録時の評価
 
-        // ★ add: 地図の bbox から amenity=toilets を取ってくる
-        async function pullToiletsFromOSM() {
-            // 画面に映っている範囲を bbox 文字列（南,西,北,東）に
-            const b = map.getBounds();
-            const bbox = `${b.getSouth()},${b.getWest()},${b.getNorth()},${b.getEast()}`;
-            
-
-            // OverpassQL
-            const query = `
-            [out:json][timeout:25];
-            (
-                node["amenity"="toilets"](${bbox});
-                way["amenity"="toilets"](${bbox});
-                relation["amenity"="toilets"](${bbox});
-            );
-            out center;`;
-
-            const url  = 'https://overpass-api.de/api/interpreter?data=' + encodeURIComponent(query);
-            console.log(url);
-            const res  = await fetch(url);
-            const data = await res.json();
-
-            // OSM → 既存フォーマットに変換
-            return data.elements.map((el) => {
-                const lat  = el.lat ?? el.center?.lat;
-                const lng  = el.lon ?? el.center?.lon;
-                const tags = el.tags ?? {};
-                console.log(tags);
-
-                return {
-                    id:   el.id,
-                    name: tags.name ?? '公共トイレ',
-                    lat, lng,
-                    address: tags['full'] || tags['street'] || '住所不明',
-                    facilities: [
-                        ...(tags.changing_table        === 'yes' ? ['ベビーベッド']      : []),
-                        ...(tags['wheelchair'] === 'yes' ? ['多目的トイレ']     : []),
-                        ...(tags['ostomy']     === 'yes' ? ['オストメイト']     : []),
-                        ...(tags.hand_dryer            === 'yes' ? ['ハンドドライヤー'] : [])
-                    ],
-                    rating:      3.0,   // OSM には評価が無いのでデフォルト
-                    cleanliness: 3,
-                    comments:    []
-                };
-            });
-        }
-
-
-        // サンプルデータ
+        // --- サンプルデータ（サーバー接続失敗時用） ---
         const sampleToilets = [
-            {
-                id: 1,
-                name: "東京駅丸の内南口トイレ",
-                lat: 35.6812,
-                lng: 139.7671,
-                address: "東京都千代田区丸の内1-9-1",
-                facilities: ["ベビーベッド", "多目的トイレ", "ハンドドライヤー", "車椅子対応"],
-                rating: 4.2,
-                cleanliness: 4,
-                comments: ["清潔で使いやすい", "混雑している時間帯がある"]
-            },
-            {
-                id: 2,
-                name: "皇居外苑公衆トイレ",
-                lat: 35.6838,
-                lng: 139.7548,
-                address: "東京都千代田区皇居外苑",
-                facilities: ["多目的トイレ", "車椅子対応"],
-                rating: 3.8,
-                cleanliness: 3,
-                comments: ["景色が良い場所にある"]
-            },
-            {
-                id: 3,
-                name: "日比谷公園トイレ",
-                lat: 35.6743,
-                lng: 139.7594,
-                address: "東京都千代田区日比谷公園1-6",
-                facilities: ["ベビーベッド", "ハンドドライヤー", "ウォシュレット"],
-                rating: 4.0,
-                cleanliness: 4,
-                comments: ["公園内で便利", "清潔に保たれている"]
-            },
-            {
-                id: 4,
-                name: "銀座三越トイレ",
-                lat: 35.6719,
-                lng: 139.7639,
-                address: "東京都中央区銀座4-6-16",
-                facilities: ["ベビーベッド", "多目的トイレ", "オストメイト", "ハンドドライヤー", "ウォシュレット"],
-                rating: 4.5,
-                cleanliness: 5,
-                comments: ["とても清潔", "設備が充実している"]
-            },
-            {
-                id: 5,
-                name: "有楽町駅前トイレ",
-                lat: 35.6751,
-                lng: 139.7632,
-                address: "東京都千代田区有楽町2-7-1",
-                facilities: ["多目的トイレ", "ハンドドライヤー"],
-                rating: 3.5,
-                cleanliness: 3,
-                comments: ["駅前で便利", "混雑することがある"]
-            }
+            {id: 1, name: "東京駅丸の内南口トイレ", lat: 35.6812, lng: 139.7671, address: "東京都千代田区丸の内1-9-1", facilities: ["ベビーベッド", "多目的トイレ", "ハンドドライヤー", "車椅子対応"], rating: 4.2, cleanliness: 4, comments: ["清潔で使いやすい", "混雑している時間帯がある"]},
+            {id: 2, name: "皇居外苑公衆トイレ", lat: 35.6838, lng: 139.7548, address: "東京都千代田区皇居外苑", facilities: ["多目的トイレ", "車椅子対応"], rating: 3.8, cleanliness: 3, comments: ["景色が良い場所にある"]},
         ];
-
-
         
-        // 初期化
+        // --- 初期化 ---
         async function initMap() {
-            // 地図の初期化（東京駅を中心に）
             map = L.map('map').setView([35.6812, 139.7671], 15);
-
-            // OpenStreetMapタイルレイヤーの追加
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap contributors'
             }).addTo(map);
 
-            
-            // ★ 最初の読み込み
-            toilets = await pullToiletsFromOSM();
-            addToiletMarkers();
-            updateNearbyToilets();
-
-                // ★ 地図移動ごとに再取得（連続呼び出し防止なら debounce する）
-            map.on('moveend', async () => {
-                toilets = await pullToiletsFromOSM();
-                addToiletMarkers();
-                updateNearbyToilets();
-            });
-
-            async function loadToiletsFromServer() {
-                
-                const res = await fetch("http://127.0.0.1:5000/api/toilets");
-                // res.set({ 'Access-Control-Allow-Origin': '*' });
-                const data = await res.json();
-                toilets = data;
-                addToiletMarkers();
-                updateNearbyToilets();
-            }
-
             await loadToiletsFromServer();
 
-            // サンプルデータをローカルストレージから読み込み、なければサンプルデータを使用
-            const savedToilets = localStorage.getItem('toilets');
-            if (savedToilets) {
-                toilets = JSON.parse(savedToilets);
-            } else {
-                toilets = [...sampleToilets];
-                saveToilets();
-            }
+            map.on('moveend', async () => {
+                const osmToilets = await pullToiletsFromOSM();
+                const existingIds = new Set(toilets.map(t => t.id));
+                const newToilets = osmToilets.filter(t => !existingIds.has(t.id));
+                if (newToilets.length > 0) {
+                    toilets.push(...newToilets);
+                    addToiletMarkers();
+                    updateNearbyToilets();
+                }
+            });
 
-            // トイレマーカーを地図に追加
-            addToiletMarkers();
-
-            // 地図クリックイベント
             map.on('click', onMapClick);
 
-            // 現在地を取得（エラーでもデフォルト位置を設定）
             setTimeout(() => {
                 getCurrentLocation();
             }, 500);
         }
 
-        // 現在地取得
-        function getCurrentLocation() {
-            if (!navigator.geolocation) {
-                alert('お使いのブラウザは位置情報をサポートしていません。\nデモ用に東京駅周辺を表示します。');
-                setDefaultLocation();
-                return;
+        // --- データ取得 ---
+
+        // サーバー(DB)からトイレ情報をロード
+        async function loadToiletsFromServer() {
+            try {
+                const res = await fetch("http://127.0.0.1:5000/api/toilets");
+                if (!res.ok) throw new Error('Failed to fetch from server');
+                toilets = await res.json();
+            } catch (error) {
+                console.error("サーバーからトイレ情報を取得できませんでした:", error);
+                alert("サーバーに接続できません。サンプルデータを表示します。");
+                toilets = [...sampleToilets];
             }
-
-            showLoading();
-            
-            const options = {
-                enableHighAccuracy: true,
-                timeout: 10000,
-                maximumAge: 60000
-            };
-
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    hideLoading();
-                    currentPosition = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-
-                    document.getElementById('toiletLat').value = currentPosition.lat;
-                    document.getElementById('toiletLng').value = currentPosition.lng;
-                    
-                    // 現在地マーカーを追加
-                    if (currentLocationMarker) {
-                        map.removeLayer(currentLocationMarker);
-                    }
-                    
-                    const currentLocationIcon = L.divIcon({
-                        className: 'current-location-marker',
-                        iconSize: [20, 20],
-                        iconAnchor: [10, 10]
-                    });
-                    
-                    currentLocationMarker = L.marker([currentPosition.lat, currentPosition.lng], {
-                        icon: currentLocationIcon
-                    }).addTo(map);
-                    
-                    // 地図を現在地に移動
-                    map.setView([currentPosition.lat, currentPosition.lng], 16);
-                    
-                    // 近くのトイレを更新
-                    updateNearbyToilets();
-                },
-                (error) => {
-                    hideLoading();
-                    let errorMessage = '';
-                    
-                    switch(error.code) {
-                        case error.PERMISSION_DENIED:
-                            errorMessage = "位置情報の使用が拒否されました。\nブラウザの設定で位置情報を許可してください。\nデモ用に東京駅周辺を表示します。";
-                            break;
-                        case error.POSITION_UNAVAILABLE:
-                            errorMessage = "位置情報が利用できません。\nデモ用に東京駅周辺を表示します。";
-                            break;
-                        case error.TIMEOUT:
-                            errorMessage = "位置情報の取得がタイムアウトしました。\nデモ用に東京駅周辺を表示します。";
-                            break;
-                        default:
-                            errorMessage = "位置情報の取得でエラーが発生しました。\nデモ用に東京駅周辺を表示します。";
-                            break;
-                    }
-                    
-                    alert(errorMessage);
-                    console.error('位置情報エラー:', error);
-                    setDefaultLocation();
-                },
-                options
-            );
-        }
-
-        // デフォルト位置を設定（東京駅）
-        function setDefaultLocation() {
-            currentPosition = {
-                lat: 35.6812,
-                lng: 139.7671
-            };
-            
-            // デフォルト位置マーカーを追加
-            if (currentLocationMarker) {
-                map.removeLayer(currentLocationMarker);
-            }
-            
-            const defaultLocationIcon = L.divIcon({
-                className: 'current-location-marker',
-                iconSize: [20, 20],
-                iconAnchor: [10, 10],
-                html: '<div style="background: #f56565; width: 20px; height: 20px; border: 3px solid white; border-radius: 50%; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);"></div>'
-            });
-            
-            currentLocationMarker = L.marker([currentPosition.lat, currentPosition.lng], {
-                icon: defaultLocationIcon
-            }).addTo(map);
-            
-            currentLocationMarker.bindPopup("デモ位置（東京駅）").openPopup();
-            
-            // 地図をデフォルト位置に移動
-            map.setView([currentPosition.lat, currentPosition.lng], 16);
-            
-            // 近くのトイレを更新
+            addToiletMarkers();
             updateNearbyToilets();
         }
 
+        // OpenStreetMapから地図表示範囲のトイレ情報を取得
+        async function pullToiletsFromOSM() {
+            const b = map.getBounds();
+            const bbox = `${b.getSouth()},${b.getWest()},${b.getNorth()},${b.getEast()}`;
+            const query = `[out:json][timeout:25];(node["amenity"="toilets"](${bbox});way["amenity"="toilets"](${bbox});relation["amenity"="toilets"](${bbox}););out center;`;
+            const url  = 'https://overpass-api.de/api/interpreter?data=' + encodeURIComponent(query);
+            
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                return data.elements.map(el => ({
+                    id: el.id,
+                    name: el.tags?.name ?? '公共トイレ',
+                    lat: el.lat ?? el.center?.lat,
+                    lng: el.lon ?? el.center?.lon,
+                    address: el.tags?.['addr:full'] || el.tags?.['addr:street'] || '住所不明',
+                    facilities: [
+                        ...(el.tags?.changing_table === 'yes' ? ['ベビーベッド'] : []),
+                        ...(el.tags?.wheelchair === 'yes' ? ['多目的トイレ'] : []),
+                        ...(el.tags?.ostomy === 'yes' ? ['オストメイト'] : []),
+                        ...(el.tags?.hand_dryer === 'yes' ? ['ハンドドライヤー'] : [])
+                    ],
+                    rating: 3.0,
+                    cleanliness: 3,
+                    comments: []
+                }));
+            } catch (error) {
+                console.error("OSMからのデータ取得に失敗:", error);
+                return [];
+            }
+        }
+
+        // --- 地図とマーカーの操作 ---
+
         // トイレマーカーを地図に追加
         function addToiletMarkers() {
-            // 既存のマーカーを削除
             toiletMarkers.forEach(marker => map.removeLayer(marker));
             toiletMarkers = [];
-
-            // フィルター適用
             const filteredToilets = getFilteredToilets();
 
             filteredToilets.forEach(toilet => {
                 const marker = L.marker([toilet.lat, toilet.lng]).addTo(map);
-                
-                // ポップアップの設定
                 const popupContent = `
                     <div style="min-width: 200px;">
                         <h3 style="margin: 0 0 8px 0; color: #2d3748;">${toilet.name}</h3>
@@ -905,81 +626,57 @@
                             ${toilet.facilities.map(f => `<span style="background: #e2e8f0; color: #4a5568; padding: 2px 6px; border-radius: 8px; font-size: 12px; margin-right: 4px;">${f}</span>`).join('')}
                         </div>
                         <button onclick="showToiletDetail(${toilet.id})" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; width: 100%;">詳細を見る</button>
-                    </div>
-                `;
-                
+                    </div>`;
                 marker.bindPopup(popupContent);
                 toiletMarkers.push(marker);
             });
         }
 
-        // フィルター適用
-        function getFilteredToilets() {
-            const filters = {
-                babyBed: document.getElementById('filterBabyBed').checked,
-                multipurpose: document.getElementById('filterMultipurpose').checked,
-                ostomy: document.getElementById('filterOstomy').checked,
-                handDryer: document.getElementById('filterHandDryer').checked
-            };
-
-            return toilets.filter(toilet => {
-                if (filters.babyBed && !toilet.facilities.includes('ベビーベッド')) return false;
-                if (filters.multipurpose && !toilet.facilities.includes('多目的トイレ')) return false;
-                if (filters.ostomy && !toilet.facilities.includes('オストメイト')) return false;
-                if (filters.handDryer && !toilet.facilities.includes('ハンドドライヤー')) return false;
-                return true;
-            });
+        // ★★★ 地図クリックで緯度・経度をフォームに設定 ★★★
+        function onMapClick(e) {
+            if (document.getElementById('registerModal').classList.contains('active')) {
+                const lat = e.latlng.lat.toFixed(6);
+                const lng = e.latlng.lng.toFixed(6);
+                document.getElementById('toiletLat').value = lat;
+                document.getElementById('toiletLng').value = lng;
+                
+                if (tempMarker) {
+                    tempMarker.setLatLng([lat, lng]);
+                } else {
+                    tempMarker = L.marker([lat, lng]).addTo(map);
+                }
+            }
         }
 
-        // 近くのトイレを更新
+        // --- UI更新 ---
+        
         function updateNearbyToilets() {
-            // 現在位置が設定されていない場合は全てのトイレを表示
             if (!currentPosition) {
-                const filteredToilets = getFilteredToilets();
-                displayToiletList(filteredToilets.slice(0, 5));
+                displayToiletList(getFilteredToilets().slice(0, 5));
                 return;
             }
-
-            const filteredToilets = getFilteredToilets();
+            const toiletsWithDistance = getFilteredToilets().map(toilet => ({
+                ...toilet,
+                distance: calculateDistance(currentPosition.lat, currentPosition.lng, toilet.lat, toilet.lng)
+            })).sort((a, b) => a.distance - b.distance);
             
-            // 距離を計算
-            const toiletsWithDistance = filteredToilets.map(toilet => {
-                const distance = calculateDistance(
-                    currentPosition.lat, currentPosition.lng,
-                    toilet.lat, toilet.lng
-                );
-                return {
-                    ...toilet,
-                    distance: distance,
-                    walkingTime: Math.ceil(distance / 80) // 時速4.8km（80m/分）で計算
-                };
-            });
-
-            // 距離でソート
-            toiletsWithDistance.sort((a, b) => a.distance - b.distance);
-
-            // 500m以内のトイレ、または最低5個のトイレを表示
-            const nearbyToilets = toiletsWithDistance.filter(t => t.distance <= 500);
-            const displayToilets = nearbyToilets.length >= 5 ? nearbyToilets : toiletsWithDistance.slice(0, 5);
-
-            displayToiletList(displayToilets);
+            displayToiletList(toiletsWithDistance.slice(0, 10)); // 近くの10件を表示
         }
-
-        // トイレリストを表示
-        function displayToiletList(toilets) {
+        
+        function displayToiletList(toiletsToDisplay) {
             const toiletList = document.getElementById('toiletList');
-            
-            if (toilets.length === 0) {
+            if (toiletsToDisplay.length === 0) {
                 toiletList.innerHTML = '<p style="text-align: center; color: #718096;">近くにトイレが見つかりませんでした。</p>';
                 return;
             }
-
-            toiletList.innerHTML = toilets.map(toilet => `
+            toiletList.innerHTML = toiletsToDisplay.map(toilet => {
+                const walkingTime = toilet.distance ? Math.ceil(toilet.distance / 80) : null;
+                return `
                 <div class="toilet-item" onclick="showToiletDetail(${toilet.id})">
                     <div class="toilet-name">${toilet.name}</div>
                     <div class="toilet-info">
                         <div class="distance-time">
-                            ${toilet.distance ? `${toilet.distance}m・徒歩${toilet.walkingTime}分` : ''}
+                            ${toilet.distance ? `${toilet.distance}m・徒歩${walkingTime}分` : ''}
                         </div>
                         <div class="rating">
                             <span class="star">★</span>
@@ -987,62 +684,41 @@
                         </div>
                     </div>
                     <div class="facilities">
-                        ${toilet.facilities.map(facility => `<span class="facility-tag">${facility}</span>`).join('')}
+                        ${toilet.facilities.map(f => `<span class="facility-tag">${f}</span>`).join('')}
                     </div>
-                </div>
-            `).join('');
+                </div>`;
+            }).join('');
+        }
+        
+        // --- フィルター ---
+        function getFilteredToilets() {
+            const filters = {
+                babyBed: document.getElementById('filterBabyBed').checked,
+                multipurpose: document.getElementById('filterMultipurpose').checked,
+                ostomy: document.getElementById('filterOstomy').checked,
+                handDryer: document.getElementById('filterHandDryer').checked
+            };
+            return toilets.filter(toilet => 
+                (!filters.babyBed || toilet.facilities.includes('ベビーベッド')) &&
+                (!filters.multipurpose || toilet.facilities.includes('多目的トイレ')) &&
+                (!filters.ostomy || toilet.facilities.includes('オストメイト')) &&
+                (!filters.handDryer || toilet.facilities.includes('ハンドドライヤー'))
+            );
         }
 
-        // 距離計算（Haversine公式）
-        function calculateDistance(lat1, lng1, lat2, lng2) {
-            const R = 6371000; // 地球の半径（メートル）
-            const dLat = (lat2 - lat1) * Math.PI / 180;
-            const dLng = (lng2 - lng1) * Math.PI / 180;
-            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                      Math.sin(dLng/2) * Math.sin(dLng/2);
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-            return Math.round(R * c);
-        }
-
-        // パネルの開閉
-        function togglePanel() {
-            const panel = document.getElementById('bottomPanel');
-            panel.classList.toggle('expanded');
-        }
-
-        // フィルターの表示/非表示
-        function toggleFilters() {
-            const filterPanel = document.getElementById('filterPanel');
-            filterPanel.style.display = filterPanel.style.display === 'none' ? 'block' : 'none';
-        }
-
-        // フィルター適用
         function applyFilters() {
             addToiletMarkers();
             updateNearbyToilets();
         }
 
-        // 地図クリック
-        function onMapClick(e) {
-            // 新規登録モードの場合のみ処理
-            if (document.getElementById('registerModal').classList.contains('active')) {
-                if (tempMarker) {
-                    map.removeLayer(tempMarker);
-                }
-                tempMarker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-            }
-        }
+        // --- モーダル操作 ---
 
-        // 新規登録モーダルを開く
         function openRegisterModal() {
             document.getElementById('registerModal').classList.add('active');
-            // 評価の初期化
             selectedRating = 0;
             updateRatingDisplay();
         }
 
-        // 新規登録モーダルを閉じる
         function closeRegisterModal() {
             document.getElementById('registerModal').classList.remove('active');
             if (tempMarker) {
@@ -1054,20 +730,12 @@
             updateRatingDisplay();
         }
 
-        // トイレ詳細を表示
         function showToiletDetail(toiletId) {
             const toilet = toilets.find(t => t.id === toiletId);
             if (!toilet) return;
-
             document.getElementById('detailTitle').textContent = toilet.name;
-            
-            const distance = currentPosition ? calculateDistance(
-                currentPosition.lat, currentPosition.lng,
-                toilet.lat, toilet.lng
-            ) : null;
-            
+            const distance = currentPosition ? calculateDistance(currentPosition.lat, currentPosition.lng, toilet.lat, toilet.lng) : null;
             const walkingTime = distance ? Math.ceil(distance / 80) : null;
-
             document.getElementById('detailContent').innerHTML = `
                 <div style="margin-bottom: 16px;">
                     <h3 style="color: #2d3748; margin-bottom: 8px;">基本情報</h3>
@@ -1079,111 +747,66 @@
                         <span style="color: #718096;">（清潔度: ${toilet.cleanliness}/5）</span>
                     </div>
                 </div>
-                
                 <div style="margin-bottom: 16px;">
                     <h3 style="color: #2d3748; margin-bottom: 8px;">設備</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        ${toilet.facilities.map(facility => `
-                            <span style="background: #e2e8f0; color: #4a5568; padding: 6px 12px; border-radius: 12px; font-size: 14px;">
-                                ${facility}
-                            </span>
-                        `).join('')}
+                        ${toilet.facilities.map(f => `<span style="background: #e2e8f0; color: #4a5568; padding: 6px 12px; border-radius: 12px; font-size: 14px;">${f}</span>`).join('')}
                     </div>
                 </div>
-                
                 ${toilet.comments && toilet.comments.length > 0 ? `
                     <div style="margin-bottom: 16px;">
                         <h3 style="color: #2d3748; margin-bottom: 8px;">コメント</h3>
-                        ${toilet.comments.map(comment => `
-                            <div style="background: #f7fafc; padding: 12px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #667eea;">
-                                ${comment}
-                            </div>
-                        `).join('')}
-                    </div>
-                ` : ''}
-                
+                        ${toilet.comments.map(comment => `<div style="background: #f7fafc; padding: 12px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #667eea;">${comment}</div>`).join('')}
+                    </div>` : ''}
                 <div style="display: flex; gap: 8px; margin-top: 20px;">
-                    <button onclick="openNavigationApp(${toilet.lat}, ${toilet.lng})" 
-                            style="flex: 1; background: #48bb78; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 600;">
-                        🧭 ナビゲーション
-                    </button>
-                    <button onclick="reportIssue(${toilet.id})" 
-                            style="flex: 1; background: #ed8936; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 600;">
-                        ⚠️ 問題を報告
-                    </button>
-                </div>
-            `;
-            
+                    <button onclick="openNavigationApp(${toilet.lat}, ${toilet.lng})" style="flex: 1; background: #48bb78; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 600;">🧭 ナビゲーション</button>
+                    <button onclick="reportIssue(${toilet.id})" style="flex: 1; background: #ed8936; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 600;">⚠️ 問題を報告</button>
+                </div>`;
             document.getElementById('detailModal').classList.add('active');
         }
 
-        // トイレ詳細モーダルを閉じる
         function closeDetailModal() {
             document.getElementById('detailModal').classList.remove('active');
         }
 
-        // ナビゲーションアプリを開く
-        function openNavigationApp(lat, lng) {
-            // Google Mapsで開く
-            const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
-            window.open(url, '_blank');
+        // --- ユーティリティ ---
+        function calculateDistance(lat1, lng1, lat2, lng2) {
+            const R = 6371000;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLng = (lng2 - lng1) * Math.PI / 180;
+            const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLng/2)**2;
+            return Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)));
         }
+        function togglePanel() { document.getElementById('bottomPanel').classList.toggle('expanded'); }
+        function toggleFilters() { const fp = document.getElementById('filterPanel'); fp.style.display = fp.style.display === 'none' ? 'block' : 'none'; }
+        function openNavigationApp(lat, lng) { window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank'); }
+        function reportIssue(id) { alert(`トイレID: ${id} の問題報告機能は現在開発中です。`); }
+        function showLoading() { document.getElementById('loading').classList.add('active'); }
+        function hideLoading() { document.getElementById('loading').classList.remove('active'); }
 
-        // 問題を報告
-        function reportIssue(toiletId) {
-            const issues = [
-                'トイレが見つからない',
-                'トイレが使用できない',
-                'ベビーベッドがない/故障',
-                'ハンドドライヤーが故障',
-                '清潔度が低い',
-                'その他の問題'
-            ];
-            
-            const selectedIssue = prompt(`報告する問題を選んでください:\n${issues.map((issue, index) => `${index + 1}. ${issue}`).join('\n')}\n\n番号を入力してください (1-${issues.length}):`);
-            
-            if (selectedIssue && selectedIssue >= 1 && selectedIssue <= issues.length) {
-                alert(`「${issues[selectedIssue - 1]}」の報告を受け付けました。ご協力ありがとうございます。`);
-                // 実際のアプリでは、ここでサーバーに報告を送信
-            }
-        }
-
-        // 評価星の処理
+        // --- イベントリスナー ---
         document.addEventListener('DOMContentLoaded', function() {
-            const ratingStars = document.querySelectorAll('.rating-star');
-            ratingStars.forEach(star => {
+            initMap();
+            // 評価星の処理
+            document.querySelectorAll('.rating-star').forEach(star => {
                 star.addEventListener('click', function() {
                     selectedRating = parseInt(this.dataset.rating);
                     updateRatingDisplay();
                 });
             });
-        });
 
-        function updateRatingDisplay() {
-            const stars = document.querySelectorAll('.rating-star');
-            stars.forEach((star, index) => {
-                if (index < selectedRating) {
-                    star.classList.add('active');
-                } else {
-                    star.classList.remove('active');
-                }
-            });
-        }
-
-        // フォーム送信処理
-        document.addEventListener('DOMContentLoaded', function() {
+            // ★★★ フォーム送信処理 ★★★
             document.getElementById('registerForm').addEventListener('submit', function(e) {
                 e.preventDefault();
-                
-                if (!tempMarker) {
-                    alert('登録完了！！！！');
+                const lat = document.getElementById('toiletLat').value;
+                const lng = document.getElementById('toiletLng').value;
+
+                if (!lat || !lng) {
+                    alert('地図をクリックするか、緯度と経度を直接入力してください。');
                     return;
                 }
-                
-                const formData = new FormData(this);
+
                 const facilities = [];
-                
-                // 設備情報を取得
                 if (document.getElementById('regBabyBed').checked) facilities.push('ベビーベッド');
                 if (document.getElementById('regMultipurpose').checked) facilities.push('多目的トイレ');
                 if (document.getElementById('regOstomy').checked) facilities.push('オストメイト');
@@ -1191,29 +814,28 @@
                 if (document.getElementById('regWheelchair').checked) facilities.push('車椅子対応');
                 if (document.getElementById('regBidet').checked) facilities.push('ウォシュレット');
                 
-                const newToilet = {
-                    id: Date.now(), // 簡易ID生成
+                const comment = document.getElementById('toiletComment').value;
+
+                const newToiletData = {
                     name: document.getElementById('toiletName').value,
-                    lat: tempMarker.getLatLng().lat,
-                    lng: tempMarker.getLatLng().lng,
+                    lat: parseFloat(lat),
+                    lng: parseFloat(lng),
                     address: document.getElementById('toiletAddress').value || '住所不明',
                     facilities: facilities,
-                    rating: selectedRating || 3,
+                    rating: selectedRating || 3.0,
                     cleanliness: selectedRating || 3,
-                    comments: document.getElementById('toiletComment').value ? [document.getElementById('toiletComment').value] : []
+                    comments: comment ? [comment] : []
                 };
-                
-                
+
                 fetch("http://127.0.0.1:5000/api/toilets", {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        value: "Cross Origin Request"
-                    })
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(newToiletData)
                 })
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) throw new Error(`サーバーエラー: ${res.statusText}`);
+                    return res.json();
+                })
                 .then(addedToilet => {
                     toilets.push(addedToilet);
                     addToiletMarkers();
@@ -1222,65 +844,46 @@
                     alert("新しいトイレが登録されました！");
                 })
                 .catch(err => {
-                    alert("登録中にエラーが発生しました");
+                    alert("登録中にエラーが発生しました: " + err.message);
                     console.error(err);
                 });
             });
         });
-
-        // データの保存
-        function saveToilets() {
-            localStorage.setItem('toilets', JSON.stringify(toilets));
+        
+        function updateRatingDisplay() {
+            document.querySelectorAll('.rating-star').forEach((star, index) => {
+                star.classList.toggle('active', index < selectedRating);
+            });
         }
-
-        // ローディング表示/非表示
-        function showLoading() {
-            document.getElementById('loading').classList.add('active');
-        }
-
-        function hideLoading() {
-            document.getElementById('loading').classList.remove('active');
-        }
-
-        // 初期化実行
-        document.addEventListener('DOMContentLoaded', function() {
-            initMap();
-        });
-
-        // モーダル外クリックで閉じる
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('modal')) {
-                if (e.target.id === 'registerModal') {
-                    closeRegisterModal();
-                } else if (e.target.id === 'detailModal') {
-                    closeDetailModal();
-                }
+        
+        // --- 現在地取得 ---
+        function getCurrentLocation() {
+            if (!navigator.geolocation) {
+                alert('お使いのブラウザは位置情報をサポートしていません。');
+                return;
             }
-        });
-
-        // キーボードショートカット
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                if (document.getElementById('registerModal').classList.contains('active')) {
-                    closeRegisterModal();
+            showLoading();
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    hideLoading();
+                    currentPosition = { lat: position.coords.latitude, lng: position.coords.longitude };
+                    if (currentLocationMarker) map.removeLayer(currentLocationMarker);
+                    
+                    const icon = L.divIcon({ className: 'current-location-marker', iconSize: [20, 20], iconAnchor: [10, 10] });
+                    currentLocationMarker = L.marker([currentPosition.lat, currentPosition.lng], { icon }).addTo(map);
+                    
+                    map.setView([currentPosition.lat, currentPosition.lng], 16);
+                    updateNearbyToilets();
+                },
+                (error) => {
+                    hideLoading();
+                    alert("位置情報の取得に失敗しました。");
+                    console.error('位置情報エラー:', error);
+                    updateNearbyToilets();
                 }
-                if (document.getElementById('detailModal').classList.contains('active')) {
-                    closeDetailModal();
-                }
-            }
-        });
-
-        // レスポンシブ対応
-        function handleResize() {
-            if (map) {
-                map.invalidateSize();
-            }
+            );
         }
 
-        window.addEventListener('resize', handleResize);
-        window.addEventListener('orientationchange', function() {
-            setTimeout(handleResize, 500);
-        });
     </script>
-
-</body></html>
+</body>
+</html>
